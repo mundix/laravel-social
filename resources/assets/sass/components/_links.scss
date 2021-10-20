@@ -1,0 +1,37 @@
+.Link {
+  font-family: 'Montserrat', sans-serif;
+  font-weight: 600;
+  font-size: rem-calc(16);
+  color: $green;
+  opacity: 0.9;
+  @include theme-primary-color;
+
+  &:hover,
+  &:focus {
+    text-decoration: underline;
+  }
+
+  i {
+    display: inline-block;
+    position: relative;
+    top: rem-calc(1);
+    width: rem-calc(12);
+    height: auto;
+    margin-left: rem-calc(6);
+    vertical-align: middle;
+
+    @include breakpoint(medium) {
+      width: rem-calc(16);
+    }
+
+    svg {
+      fill: $green;
+      @include theme-primary-fill;
+    }
+  }
+
+  &.--red {
+    font-weight: normal;
+    color: $red;
+  }
+}

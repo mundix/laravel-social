@@ -1,0 +1,980 @@
+.ProfileEdit {
+  background-color: $bg-light;
+
+  .dz-default.dz-message {
+    display: none;
+  }
+  .ProfileFavorites-heading {
+    margin-bottom: 0;
+  }
+
+  .User-field-checkboxes {
+    display: flex;
+    flex-flow: row nowrap;
+    align-items: center;
+    justify-content: flex-start;
+    width: 100%;
+    margin-top: rem-calc(25);
+  }
+
+  input.-color {
+    margin-right: rem-calc(20);
+    border-color: transparent;
+    background-color: $green;
+    @include theme-primary-background-color;
+
+    @include breakpoint(medium) {
+      margin-right: rem-calc(60);
+    }
+
+    &:last-child {
+      margin-right: 0;
+    }
+  }
+
+  &-heading {
+    h1 {
+      margin-top: rem-calc(50);
+      margin-bottom: rem-calc(16);
+      font-weight: 700;
+      font-size: rem-calc(56);
+      line-height: 1.2;
+      color: $text-primary;
+
+      @include breakpoint(medium) {
+        margin-top: rem-calc(100);
+        font-size: rem-calc(70);
+      }
+    }
+
+    p {
+      margin-top: 0;
+      margin-bottom: rem-calc(35);
+      max-width: rem-calc(740);
+    }
+  }
+
+  h2 {
+    display: inline-block;
+    position: relative;
+    margin-top: rem-calc(20);
+    margin-bottom: rem-calc(20);
+    font-weight: 600;
+
+    &::after {
+      content: '';
+      display: block;
+      position: absolute;
+      top: 50%;
+      right: rem-calc(-55);
+      transform: translateY(-50%);
+      width: rem-calc(25);
+      height: rem-calc(4);
+      background-color: $green;
+      @include theme-primary-background-color-root;
+
+      @include breakpoint(medium) {
+        right: rem-calc(-80);
+        width: rem-calc(50);
+      }
+    }
+  }
+
+  .User-field {
+    margin-bottom: rem-calc(50);
+  }
+
+  .Profile-tags {
+    width: 100%;
+    margin-top: rem-calc(24);
+
+    i {
+      display: inline-block;
+      width: rem-calc(8);
+      height: auto;
+      vertical-align: middle;
+      margin: rem-calc(0 0 0 8);
+      padding: 0;
+    }
+
+    img {
+      display: block;
+      width: 100%;
+      height: auto;
+      margin: 0;
+      padding: 0;
+    }
+
+    &-select {
+      width: 100%;
+    }
+
+    .select2-selection--multiple {
+      min-height: auto !important;
+    }
+
+    .select2-selection {
+      border: 0 !important;
+      outline: 0;
+      border-radius: rem-calc(12) !important;
+      box-shadow: none;
+      background-color: transparent;
+    }
+
+    .select2-selection__rendered {
+      padding: 0 !important;
+    }
+
+    .select2-selection__choice {
+      display: flex;
+      flex-flow: row-reverse;
+      margin-top: 0;
+      margin-right: rem-calc(10);
+      // margin-bottom: rem-calc(10);
+      padding: rem-calc(4 12);
+      font-family: 'Montserrat', sans-serif;
+      font-weight: 600;
+      font-size: rem-calc(12);
+      line-height: rem-calc(16);
+      text-align: center;
+      color: $white;
+      background-color: $blueish;
+      @include theme-secondary-background-color;
+      border: 0;
+      border-radius: rem-calc(8);
+    }
+
+    .select2-selection__choice__remove {
+      margin-left: rem-calc(8);
+      margin-right: 0;
+      font-size: rem-calc(20);
+      color: $white;
+    }
+
+    .select2-search {
+      width: 100%;
+      height: rem-calc(64);
+      padding: rem-calc(20 0);
+      font-family: 'Open Sans';
+      font-weight: normal;
+      font-size: rem-calc(18);
+      color: $text-primary;
+      border: 0;
+      border-bottom: 1px dashed $gray-lighter;
+      background-color: transparent;
+      -webkit-appearance: none;
+      appearance: none;
+
+      &__field {
+        width: 100% !important;
+        font-family: 'Open Sans';
+        font-weight: normal;
+        font-size: rem-calc(18);
+        color: $text-primary;
+
+        &::-webkit-input-placeholder {
+          letter-spacing: normal;
+          color: $gray;
+          opacity: 0.5;
+        }
+       
+        &:-moz-placeholder {
+          letter-spacing: normal;
+          color: $gray;  
+          opacity: 0.5;
+        }
+       
+        &::-moz-placeholder {
+          letter-spacing: normal;
+          color: $gray;  
+          opacity: 0.5;
+        }
+       
+        &:-ms-input-placeholder {
+          letter-spacing: normal;
+          color: $gray;  
+          opacity: 0.5;
+        }
+      }
+    }
+  }
+
+  .Profile-tag {
+    border: 0;
+    outline: 0;
+  }
+
+  &-delete {
+    display: flex;
+    flex-flow: column nowrap;
+    align-items: center;
+    justify-content: center;
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: rgba($black, 0.5);
+    opacity: 1;
+    transition: opacity 0.15s linear;
+    pointer-events: all;
+
+    @include breakpoint(medium) {
+      opacity: 0;
+      pointer-events: none;
+    }
+  }
+
+  &-images-grid {
+    padding-left: rem-calc(20) !important;
+    padding-right: rem-calc(20) !important;
+
+    @include breakpoint(large) {
+      padding-left: rem-calc(65) !important;
+      padding-right: rem-calc(65) !important;
+    }
+  }
+
+  &-cell {
+    position: relative;
+    width: xy-cell-size(1 of 2);
+    margin-bottom: rem-calc(30);
+    padding-left: rem-calc(20);
+    padding-right: rem-calc(20);
+
+    @include breakpoint(50em) {
+      width: xy-cell-size(1 of 3);
+      margin-bottom: rem-calc(40);
+      padding-left: rem-calc(20);
+      padding-right: rem-calc(20);
+    }
+
+    @include breakpoint(large) {
+      width: xy-cell-size(1 of 5);
+      margin-bottom: rem-calc(40);
+      padding-left: rem-calc(20) !important;
+      padding-right: rem-calc(20) !important;
+    }
+  }
+
+  .editor {
+    height: 160px;
+  }
+
+  .editor,
+  .editor-container {
+    width: 100%;
+    margin-top: rem-calc(10);
+    
+    .ql-toolbar.ql-snow {
+      padding-left: 0;
+      padding-right: 0;
+      border: 0;
+    }
+
+    .ql-container.ql-snow {
+      border: 0;
+      border-bottom: 1px dashed $gray-lighter;
+    }
+    
+    .ql-editor,
+    .ql-editor.ql-blank {
+      padding-left: 0;
+      padding-right: 0;
+    }
+
+    .ql-editor.ql-blank::before {
+      left: 0;
+      right: 0;
+      font-family: 'Open Sans';
+      font-style: normal;
+      font-weight: normal;
+      font-size: rem-calc(18);
+      letter-spacing: normal;
+      color: $gray;
+      opacity: 0.5;
+    }
+  }
+
+  &-image-wrapper {
+    position: relative;
+
+    &:hover {
+      .ProfileEdit-delete {
+        opacity: 1;
+        pointer-events: all;
+      }
+    }
+  }
+
+  &-image {
+    width: 100%;
+    padding-bottom: 100%;
+    background-image: url('/assets/images/image-user-signup.jpg');
+    background-repeat: no-repeat;
+    background-position: center;
+    background-size: cover;
+  }
+
+  &-images-input {
+    .User-field-file {
+      height: auto;
+      margin-top: 0;
+      padding-bottom: 100%;
+    }
+
+    input[type="file"] {
+      position: absolute;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
+    }
+  }
+
+  &-videos {
+    video {
+      position: relative;
+      width: 100%;
+      height: auto;
+      object-fit: cover;
+    }
+
+    .User-field-file {
+      height: rem-calc(105) !important;
+      margin-top: 0;
+    }
+
+    .User-field-file-placeholder {
+      flex-flow: row nowrap;
+
+      span,
+      small {
+        margin: rem-calc(0 24 0 0);
+      }
+
+      span {
+        display: block !important;
+      }
+
+      .Button {
+        margin-left: auto;
+        text-align: center;
+
+        span {
+          display: none !important;
+          margin: 0;
+
+          @include breakpoint(medium) {
+            display: inline-block !important;
+          }
+        }
+      }
+    }
+  }
+
+  &-video-wrapper {
+    position: relative;
+
+    .ProfileEdit-delete {
+      display: block;
+      top: rem-calc(8);
+      left: auto;
+      right: rem-calc(8);
+      width: auto;
+      height: auto;
+      background: transparent;
+    }
+
+    &:hover {
+      .ProfileEdit-delete {
+        opacity: 1;
+        pointer-events: all;
+      }
+    }
+  }
+
+  &-quiz {
+    // margin-bottom: rem-calc(80);
+
+    small {
+      font-family: 'Open Sans', sans-serif;
+      font-style: normal;
+      font-weight: normal;
+      font-size: rem-calc(16);
+      color: $text-secondary;
+      opacity: 0.7;
+    }
+
+    label {
+      display: block;
+      margin-bottom: rem-calc(16);
+    }
+
+    select {
+      display: block;
+      width: 100%;
+    }
+
+    .ProfileEdit-quiz-heading {
+      margin-bottom: rem-calc(50);
+    }
+  }
+
+  .custom-select {
+    .quiz-select {
+      position: relative;
+    }
+
+    .vodiapicker{
+      display: none; 
+    }
+    
+    .quiz-list{
+      padding-left: 0px;
+    }
+    
+    .quiz-list img, .btn-select img {
+      display: inline-block;
+      width: rem-calc(24);
+      margin-right: rem-calc(12);
+      vertical-align: middle;
+    }
+    
+    .quiz-list li {
+      display: block;
+      height: rem-calc(44);
+      padding: rem-calc(0 24);
+      list-style: none;
+      line-height: rem-calc(44);
+      cursor: pointer;
+      // padding-top: 5px;
+      // padding-bottom: 5px;
+    }
+    
+    .quiz-list li:hover{
+    //  background-color: #F4F3F3;
+     background-color: $green-light !important;
+     @include theme-primary-background-color-opacity-important;
+    }
+    
+    .quiz-list li img{
+      margin-right: rem-calc(12);
+    }
+    
+    .quiz-list li span, .btn-select li span{
+      font-family: 'Open Sans', sans-serif;
+      font-style: normal;
+      font-weight: normal;
+      font-size: rem-calc(18);
+      color: $text-primary;
+    }
+    
+    /* item list */
+    
+    .quiz-wrapper {
+      display: none;
+      position: absolute;
+      transform: translateY(12px);
+      width: 100%;
+      background: $white;
+      box-shadow: 0px 0px 16px rgba(0, 0, 0, 0.08);
+      border-radius: rem-calc(12);
+      z-index: 1;
+    }
+    
+    .open {
+      display: show !important;
+    }
+    
+    .btn-select{
+      width: 100%;
+      height: rem-calc(60);
+      padding: rem-calc(12 48 12 24);
+      font-family: 'Open Sans', sans-serif;
+      font-size: rem-calc(18);
+      text-align: left;
+      border: 0;
+      outline: 0;
+      border-radius: rem-calc(12);
+      box-shadow: 0px 0px 16px rgba($black, 0.1);
+      -webkit-appearance: none;
+      appearance: none;
+      background-color: $white;
+      background-image: url('/assets/images/icon-arrow-down-green.svg');
+      background-repeat: no-repeat;
+      background-position: center right 24px;
+      background-size: 16px auto;
+      
+      &.active {
+        background-image: url('/assets/images/icon-arrow-up-green.svg');
+      }
+    }
+
+    .btn-select li{
+      list-style: none;
+      cursor: pointer;
+    }
+    
+    .btn-select:hover li {
+      margin-left: 0px;
+    }
+    
+    // .btn-select:hover{
+    //   background-color: #F4F3F3;
+    //   border: 1px solid transparent;
+    //   box-shadow: inset 0 0px 0px 1px #ccc;
+    // }
+    
+    .btn-select:focus {
+      outline:none;
+    }
+  }
+
+  &-quiz,
+  &-involvement,
+  &-images,
+  &-videos,
+  &-favorites,
+  &-about,
+  &-testimonials,
+  &-events {
+    margin-top: rem-calc(30);
+    // overflow-x: auto;
+    // overflow-y: hidden;
+    overflow: visible;
+
+    @include breakpoint(medium) {
+      margin-top: rem-calc(50);
+    }
+
+    &-heading {
+      display: flex;
+      flex-flow: column wrap;
+      align-items: flex-start;
+      justify-content: center;
+      margin-bottom: rem-calc(20);
+
+      .Link {
+        margin-left: 0;
+        margin-right: 0;
+        margin-bottom: rem-calc(20);
+
+        @include breakpoint(medium) {
+          margin-left: auto;
+          margin-right: rem-calc(20);
+          margin-bottom: 0;
+        }
+      }
+
+      .Button {
+        margin-bottom: rem-calc(20);
+      }
+
+      @include breakpoint(medium) {
+        flex-flow: row wrap;
+        align-items: center;
+        justify-content: flex-start;
+
+        h2 {
+          margin-right: auto;
+        }
+
+        .Button {
+          margin-bottom: 0;
+          margin-left: rem-calc(20);
+        }
+      }
+    }
+  }
+
+  &-about {
+    margin-top: rem-calc(15);
+  }
+
+  &-images,
+  &-videos {
+    margin-top: rem-calc(30);
+    // overflow-x: auto;
+    // overflow-y: hidden;
+    overflow: visible;
+  
+    @include breakpoint(medium) {
+      margin-top: rem-calc(10);
+    }
+  }
+
+  &-quiz,
+  &-involvement,
+  &-images,
+  &-videos,
+  &-favorites,
+  &-about,
+  &-testimonials,
+  &-events {
+    .ProfileEdit-cell {
+      width: xy-cell-size(1 of 4);
+      margin-bottom: rem-calc(20);
+
+      @include breakpoint(medium) {
+        width: xy-cell-size(1 of 7);
+      }
+
+      .User-field-file-placeholder {
+        padding: 0;
+
+        span,
+        small {
+          margin-bottom: rem-calc(4);
+        }
+      }
+    }
+
+    .Admin-content {
+      padding: 0 !important;
+
+      .grid-x.grid-padding-x.full,
+      .cell.large-12 {
+        padding-left: 0;
+        padding-right: 0;
+        overflow: visible;
+      }
+
+      table {
+        margin-top: 0;
+
+        tr td,
+        tr th {
+          padding-left: rem-calc(16);
+          padding-right: rem-calc(16);
+
+          @include breakpoint(medium) {
+            padding-left: rem-calc(24);
+            padding-right: rem-calc(24);
+          }
+        }
+      }
+
+      .Button.--more {
+        position: relative;
+        left: rem-calc(-32);
+        margin-left: 0;
+      }
+
+      .More-tooltip {
+        width: rem-calc(150);
+        transform: translate3d(-90%, -20%, 0);
+      }
+    }
+  }
+
+  &-about {
+
+  }
+
+  &-testimonials {
+    .swiper-slide {
+      padding: rem-calc(60 30);
+      border-radius: rem-calc(8);
+      background-color: $white;
+      box-shadow: 0px 0px 16px rgba($black, 0.05);
+
+      @include breakpoint(medium) {
+        padding: rem-calc(30);
+      }
+
+      .ProfileEdit-delete {
+        display: block;
+        top: rem-calc(8);
+        left: auto;
+        right: rem-calc(8);
+        width: auto;
+        height: auto;
+        background: transparent;
+      }
+
+      &:hover {
+        .ProfileEdit-delete {
+          opacity: 1;
+          pointer-events: all;
+        }
+      }
+    }
+
+    .User-field {
+      margin-bottom: rem-calc(30);
+
+      &:nth-child(2) {
+        margin-bottom: 0;
+      }
+    }
+
+    textarea {
+      height: rem-calc(64);
+    }
+  }
+
+  &-events {
+
+    .swiper-slide {
+      padding: rem-calc(60 40);
+      border-radius: rem-calc(8);
+      background-color: $white;
+      box-shadow: 0px 0px 16px rgba($black, 0.05);
+
+      @include breakpoint(medium) {
+        padding: rem-calc(40);
+      }
+
+      .ProfileEdit-delete {
+        display: block;
+        top: rem-calc(8);
+        left: auto;
+        right: rem-calc(8);
+        width: auto;
+        height: auto;
+        background: transparent;
+      }
+  
+      &:hover {
+        .ProfileEdit-delete {
+          opacity: 1;
+          pointer-events: all;
+        }
+      }
+    }
+
+    .User-field:last-child {
+      margin-bottom: 0;
+    }
+
+    .User-field-file {
+      height: 100%;
+      margin: 0;
+    }
+  }
+
+  &-event {
+    &-image {
+      height: rem-calc(300);
+      margin-bottom: rem-calc(20);
+      padding-bottom: rem-calc(20);
+
+      @include breakpoint(medium) {
+        height: auto;
+        margin-bottom: 0;
+      }
+    }
+
+    &-sponsors {
+      display: flex;
+      flex-flow: row wrap;
+      align-items: center;
+      justify-content: flex-start;
+      width: 100%;
+      margin-top: rem-calc(18);
+    }
+
+    &-sponsor {
+      width: rem-calc(90);
+      height: rem-calc(65);
+      margin-right: rem-calc(20);
+      margin-bottom: rem-calc(20);
+      background-image: url('/assets/images/placeholder-event.jpg');
+      background-repeat: no-repeat;
+      background-position: center;
+      background-size: cover;
+
+      &-delete {
+        position: relative;
+        width: 100%;
+        height: 100%;
+        border: 0;
+        outline: 0;
+        background-color: rgba($black, 0.5);
+        background-image: url('/assets/images/icon-delete-red.svg');
+        background-repeat: no-repeat;
+        background-position: center;
+        background-size: 24px auto;
+        opacity: 1;
+        transition: opacity 0.15s linear;
+        pointer-events: all;
+        -webkit-appearance: none;
+        appearance: none;
+
+        @include breakpoint(medium) {
+          opacity: 0;
+          pointer-events: none;
+        }
+      }
+
+      &:hover {
+        .ProfileEdit-event-sponsor-delete {
+          opacity: 1;
+          pointer-events: all;
+        }
+      }
+    }
+
+    &-add-sponsor {
+      display: flex;
+      flex-flow: row nowrap;
+      align-items: center;
+      justify-content: center;
+      width: rem-calc(90);
+      height: rem-calc(65);
+      margin-bottom: rem-calc(20);
+      border: rem-calc(2) solid $green;
+      @include theme-primary-border-color;
+      border-radius: rem-calc(12);
+      background-color: $green-light;
+      @include theme-primary-background-color-opacity;
+      // background-image: url('/assets/images/icon-add-circle.svg');
+      // background-repeat: no-repeat;
+      // background-position: center;
+      // background-size: 24px auto;
+      cursor: pointer;
+
+      i {
+        position: relative;
+        display: block;
+        width: rem-calc(24);
+        height: auto;
+
+        svg {
+          fill: $green;
+          @include theme-primary-fill;
+        }
+      }
+    }
+  }
+
+  &-employees {
+    .Company-news-item {
+      position: relative;
+      margin-bottom: 0;
+
+      .ProfileEdit-delete {
+        display: block;
+        top: rem-calc(8);
+        left: auto;
+        right: rem-calc(8);
+        width: auto;
+        height: auto;
+        background: transparent;
+      }
+
+      &:hover {
+        .ProfileEdit-delete {
+          opacity: 1;
+          pointer-events: all;
+        }
+      }
+    }
+  }
+
+  &-back {
+    padding: rem-calc(80 0);
+    text-align: center;
+  }
+
+  .ProfileFavorites-pagination {
+    padding-bottom: 0;
+  }
+
+  .Reveal-testimonial {
+    background-color: $white;
+
+    .select2-container {
+      width: 100% !important;
+
+      .select2-selection {
+        height: auto !important;
+        margin-top: rem-calc(6);
+        padding: rem-calc(12 20 12 0);
+        font-size: rem-calc(14);
+        border-radius: 0;
+        box-shadow: none;
+        border-radius: 0 !important;
+        border-bottom: 1px dashed $gray-lighter !important;
+        background-position: center right;
+        background-size: 12px auto;
+      }
+
+      .select2-selection__rendered {
+        padding-left: 0 !important;
+      }
+    }
+
+    // select.simple {
+    //   margin-top: rem-calc(6);
+    //   padding-left: 0;
+    //   font-family: 'Open Sans';
+    //   font-weight: normal;
+    //   font-size: rem-calc(18);
+    //   color: rgba($text-primary, 0.5);
+    // }
+  }
+
+  .Reveal-sponsors {
+    background-color: $white;
+  }
+
+  .Reveal-sponsors {
+    max-width: rem-calc(1240);
+    padding: 0 !important;
+    background-color: $white;
+
+    .ProfileEdit-event {
+      padding: 1rem !important;
+    }
+
+    .Reveal-buttons {
+      margin-bottom: rem-calc(40);
+      padding-left: rem-calc(15);
+      padding-right: rem-calc(15);
+    }
+
+    .Reveal-close {
+      top: rem-calc(20);
+      right: rem-calc(20);
+    }
+  }
+
+  .Reveal-community {
+    padding: rem-calc(20 20 0) !important;
+  }
+
+  .Reveal-event {
+    max-width: rem-calc(1240);
+    padding: 0 !important;
+    background-color: $white;
+
+    .ProfileEdit-event {
+      padding: 1rem !important;
+    }
+
+    .Reveal-buttons {
+      margin-bottom: rem-calc(40);
+      padding-left: rem-calc(15);
+      padding-right: rem-calc(15);
+    }
+
+    .ProfileEdit-event-info {
+      padding-left: rem-calc(15) !important;
+
+      @include breakpoint(medium) {
+        padding-left: 0 !important;
+      }
+    }
+
+    .ProfileEdit-event-info .User-field:last-child {
+      margin-bottom: 0 !important;
+    }
+
+    .Reveal-close {
+      top: rem-calc(20);
+      right: rem-calc(20);
+    }
+  }
+}

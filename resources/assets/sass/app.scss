@@ -1,0 +1,129 @@
+/**
+    Foundation
+ */
+@import "node_modules/foundation-sites/scss/foundation";
+@import "vendors/foundation-settings";
+
+@include foundation-xy-grid-classes(
+    $base-grid: true,
+    $margin-grid: true,
+    $padding-grid: true,
+    $block-grid: true,
+    $collapse: true,
+    $offset: true,
+    $vertical-grid: true,
+    $frame-grid: true
+);
+@include foundation-visibility-classes;
+@include foundation-reveal;
+@include foundation-pagination;
+
+@import '~simplelightbox/src/simple-lightbox';
+@import '~swiper/swiper';
+@import '../../../node_modules/quill/dist/quill.snow.css';
+@import '../../../node_modules/select2/src/scss/core.scss';
+/**
+    END Foundation
+ */
+
+/*===============
+  SETTINGS
+===============*/
+@import 'settings/colors';
+@import 'settings/fonts';
+/*===============
+  UTILITIES
+===============*/
+@import 'utils/functions';
+@import 'utils/mixins';
+/*===============
+  BASE
+===============*/
+@import 'base/reset';
+@import 'base/setup';
+@import 'base/print';
+@import 'base/typography';
+@import 'base/media';
+@import 'base/forms';
+@import 'base/tables';
+/*===============
+  UTILITIES
+===============*/
+@import 'utils/helpers';
+/*===============
+  COMPONENTS
+===============*/
+@import 'components/buttons';
+@import 'components/links';
+
+/*===============
+  VIEWS
+===============*/
+.grid-x.grid-padding-x {
+    width: 100%;
+    padding-left: rem-calc(20);
+    padding-right: rem-calc(20);
+
+    @include breakpoint(large) {
+        padding-left: rem-calc(40);
+        padding-right: rem-calc(40);
+    }
+
+    @include breakpoint(xlarge) {
+        padding-left: rem-calc(50);
+        padding-right: rem-calc(50);
+    }
+}
+
+.grid-x.grid-padding-x.full {
+    position: relative;
+    margin: 0 auto;
+    overflow: hidden;
+}
+
+.empty-state {
+    display: flex;
+    flex-flow: column nowrap;
+    align-items: center;
+    justify-content: center;
+    width: 100%;
+    height: auto;
+    margin-bottom: rem-calc(50);
+    padding-top: rem-calc(105);
+    padding-bottom: rem-calc(105);
+    border: 1px dashed $text-primary;
+    border-radius: rem-calc(8);
+
+    img {
+        display: block;
+        width: rem-calc(48);
+        height: auto;
+        margin-bottom: rem-calc(16);
+        opacity: 0.6;
+    }
+
+    span {
+        font-family: 'Open Sans', sans-serif;
+        font-style: normal;
+        font-weight: 600;
+        font-size: rem-calc(16);
+        text-align: center;
+        color: $text-primary;
+        opacity: 0.6;
+    }
+}
+
+@import 'views/header';
+@import 'views/footer';
+@import 'views/user';
+@import 'views/profile';
+@import 'views/profile-edit';
+@import 'views/profile-favorites';
+@import 'views/company';
+@import 'views/admin';
+@import 'views/article';
+@import 'views/reveal';
+
+@import "variables";
+@import "overrides";
+@import "spinner";

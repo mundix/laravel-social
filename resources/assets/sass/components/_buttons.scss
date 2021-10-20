@@ -1,0 +1,390 @@
+button {
+  cursor: pointer;
+}
+
+input[type="submit"],
+.Button {
+  display: inline-block;
+  height: rem-calc(60);
+  padding: rem-calc(0 20);
+  border: 0;
+  font-family: 'Open Sans', sans-serif;
+  font-weight: 500;
+  font-size: rem-calc(18);
+  line-height: rem-calc(60);
+  text-align: center;
+  color: $white;
+  border-radius: rem-calc(60);
+  background: $green;
+  -webkit-appearance: none;
+  appearance: none;
+  cursor: pointer;
+  @include theme-primary-background-color;
+
+  @include breakpoint(medium) {
+    padding: rem-calc(0 32);
+  }
+
+  &:hover,
+  &:focus {
+    color: $white;
+  }
+
+  &.--small {
+    height: rem-calc(50);
+    padding: rem-calc(0 24);
+    font-weight: 500;
+    font-size: rem-calc(16);
+    line-height: rem-calc(50);
+    border-radius: rem-calc(50);
+  }
+
+  &.--smaller {
+    height: rem-calc(44);
+    padding: rem-calc(0 24);
+    font-weight: 600;
+    font-size: rem-calc(14);
+    line-height: rem-calc(44);
+    border-radius: rem-calc(50);
+  }
+
+  &.--clear {
+    color: $green;
+    background: transparent;
+    @include theme-primary-color;
+
+    &:hover {
+      text-decoration: underline;
+    }
+  }
+
+  &.--white {
+    height: rem-calc(48);
+    padding: rem-calc(0 18);
+    font-weight: 600;
+    font-size: rem-calc(14);
+    line-height: rem-calc(48);
+    color: $green;
+    border-radius: rem-calc(12);
+    background: $white;
+    box-shadow: 0px 0px 16px rgba($black, 0.08);
+    @include theme-primary-color;
+
+    &.--regular {
+      height: rem-calc(60);
+      padding: rem-calc(0 48);
+      font-weight: 500;
+      font-size: rem-calc(18);
+      line-height: rem-calc(60);
+      border-radius: rem-calc(60);
+
+      &.--small {
+        height: rem-calc(50);
+        padding: rem-calc(0 24);
+        font-weight: 500;
+        font-size: rem-calc(16);
+        line-height: rem-calc(50);
+        border-radius: rem-calc(50);
+      }
+    }
+  }
+
+  &.--gray {
+    color: $text-primary;
+    background-color: #F2F2F2;
+
+    &.--regular {
+      height: rem-calc(60);
+      padding: rem-calc(0 48);
+      font-weight: 500;
+      font-size: rem-calc(18);
+      line-height: rem-calc(60);
+      border-radius: rem-calc(60);
+
+      &.--small {
+        height: rem-calc(50);
+        padding: rem-calc(0 24);
+        font-weight: 600;
+        font-size: rem-calc(14);
+        line-height: rem-calc(50);
+        border-radius: rem-calc(50);
+      }
+    }
+  }
+
+  &.--green-light {
+    height: rem-calc(48);
+    padding: rem-calc(0 34);
+    font-weight: 500;
+    font-size: rem-calc(16);
+    line-height: rem-calc(48);
+    color: $white;
+    border-radius: rem-calc(4);
+    background-color: $green;
+    // @include theme-primary-color;
+    @include theme-primary-background-color-opacity-dark;
+    // @include theme-primary-background-color-opacity-dark;
+
+    svg {
+      fill: $white;
+    }
+
+    &.--regular {
+      height: rem-calc(60);
+      padding: rem-calc(0 48);
+      font-weight: 500;
+      font-size: rem-calc(18);
+      line-height: rem-calc(60);
+      border-radius: rem-calc(60);
+
+      &.--small {
+        height: rem-calc(50);
+        padding: rem-calc(0 24);
+        font-weight: 600;
+        font-size: rem-calc(14);
+        line-height: rem-calc(50);
+        border-radius: rem-calc(50);
+      }
+    }
+  }
+
+  &.--green-light-2 {
+    height: rem-calc(48);
+    padding: rem-calc(0 34);
+    font-weight: 500;
+    font-size: rem-calc(16);
+    line-height: rem-calc(48);
+    color: $green;
+    border-radius: rem-calc(4);
+    background-color: #D8DED4;
+    @include theme-primary-color;
+    @include theme-primary-background-color-opacity-dark;
+
+    &.--regular {
+      height: rem-calc(60);
+      padding: rem-calc(0 48);
+      font-weight: 500;
+      font-size: rem-calc(18);
+      line-height: rem-calc(60);
+      border-radius: rem-calc(60);
+
+      &.--small {
+        height: rem-calc(50);
+        padding: rem-calc(0 24);
+        font-weight: 400;
+        font-size: rem-calc(16);
+        line-height: rem-calc(50);
+        border-radius: rem-calc(50);
+      }
+    }
+  }
+
+  &.--green {
+    padding: rem-calc(0 20);
+    font-weight: 500;
+    font-size: rem-calc(16);
+    color: $green;
+    background: #D8DED4;
+    @include theme-primary-color;
+    @include theme-primary-background-color-opacity-dark;
+
+    @include breakpoint(medium) {
+      padding: rem-calc(0 24);
+    }
+  }
+
+  &.--red {
+    height: rem-calc(36);
+    padding: rem-calc(0 12);
+    font-weight: 500;
+    font-size: rem-calc(14);
+    line-height: rem-calc(36);
+    color: $white;
+    background-color: $red;
+
+    &.--regular {
+      height: rem-calc(60);
+      padding: rem-calc(0 48);
+      font-size: rem-calc(18);
+      line-height: rem-calc(60);
+      border-radius: rem-calc(60);
+
+      &.--small {
+        height: rem-calc(50);
+        padding: rem-calc(0 24);
+        font-weight: 500;
+        font-size: rem-calc(16);
+        line-height: rem-calc(50);
+        border-radius: rem-calc(50);
+      }
+    }
+
+    span {
+      display: none;
+    }
+
+    @include breakpoint(medium) {
+      height: rem-calc(48);
+      padding: rem-calc(0 18);
+      line-height: rem-calc(48);
+
+      span {
+        display: inline-block;
+      }
+    }
+  }
+
+  &.--blueish {
+    background-color: $blueish;
+    @include theme-secondary-background-color;
+  }
+
+  &.--social {
+    padding: rem-calc(0 12);
+    font-family: 'Open Sans', sans-serif;
+    border-radius: 0;
+
+    i {
+      width: rem-calc(18);
+      margin-right: rem-calc(6);
+    }
+
+    &.--twitter { background-color: #1DA1F2; }
+    &.--facebook { background-color: #3B5998; }
+    &.--instagram { background-color: #0077B5; }
+    &.--pinterest { background-color: #C90500; }
+  }
+
+  &.--filter {
+    color: $gray;
+    border: 0;
+    background-color: transparent;
+    // background-image: url('/assets/images/icon-filter.svg');
+    background-repeat: no-repeat;
+    background-position: center left;
+    background-size: 16px auto;
+
+    i {
+      position: relative;
+      display: inline-block;
+      width: rem-calc(16);
+      height: auto;
+      vertical-align: middle;
+
+      svg {
+        fill: #89969F;
+      }
+    }
+
+    &.selected,
+    &:active,
+    &:focus {
+      // color: $green;
+      @include theme-primary-color;
+      // background-image: url('/assets/images/icon-filter-green.svg');
+
+      svg {
+        @include theme-primary-fill;
+      }
+    }
+  }
+
+  &.--more {
+    color: $gray;
+    border: 0;
+    background-color: transparent;
+    background-image: url('/assets/images/icon-more-dots.svg');
+    background-repeat: no-repeat;
+    background-position: center;
+    background-size: 24px auto;
+    
+    &.selected {
+      background-image: url('/assets/images/icon-more-dots-green.svg');
+    }
+  }
+
+  &.--profile-button {
+    height: rem-calc(52);
+    padding: rem-calc(0 16);
+    font-weight: 600;
+    font-size: rem-calc(16);
+    line-height: rem-calc(52);
+    color: $white;
+    border-radius: rem-calc(4);
+
+    i {
+      width: rem-calc(22);
+      height: auto;
+      margin-right: rem-calc(4);
+
+      svg {
+        fill: $white;
+      }
+    }
+
+    &.--normal {
+      color: $green;
+      background-color: #D8DED4;
+      @include theme-primary-color;
+      @include theme-primary-background-color-opacity-dark;
+
+      svg {
+        fill: $green;
+        @include theme-primary-fill;
+      }
+    }
+
+    &.--inspirer    { background: linear-gradient(262.11deg, #D79D16 0%, #F6B929 110.3%); }
+    &.--builder     { background: linear-gradient(82.36deg, #A2B147 0%, #839228 100%); }
+    &.--advocate    { background: linear-gradient(262.11deg, #3193BB 0%, #63B2D2 110.3%); }
+    &.--mover       { background: linear-gradient(82.36deg, #B63852 0%, #8F142D 100%); }
+    &.--servant     { background: linear-gradient(262.01deg, #275E87 -13.26%, #4D7898 110.3%); }
+    &.--interactive { background: linear-gradient(82.36deg, #EB8828 0%, #C97320 100%); }
+    &.--connector   { background: linear-gradient(82.53deg, #977495 -20.79%, #774D75 100%); }
+  }
+
+  &:disabled,
+  &.disabled,
+  &.--disabled {
+    opacity: 0.35;
+    pointer-events: none;
+  }
+
+  i {
+    display: inline-block;
+    position: relative;
+    top: rem-calc(-1);
+    width: rem-calc(24);
+    height: auto;
+    vertical-align: middle;
+
+    &.--before { margin-right: 0; }
+    &.--after { margin-left: 0; }
+
+    @include breakpoint(medium) {
+
+      &.--before { margin-right: rem-calc(4); }
+      &.--after { margin-left: rem-calc(4); }
+    }
+
+    svg {
+      display: block;
+      width: 100%;
+      height: auto;
+    }
+
+    img {
+      display: block;
+      width: 100%;
+      height: auto;
+      margin: 0;
+      padding: 0;
+    }
+  }
+}
+
+//Sweet Alert buttons overrides
+.swal2-container button {
+  border-radius: 20px !important;
+  border: none !important;
+}

@@ -1,0 +1,130 @@
+h1 {
+  margin-top: rem-calc(22);
+  margin-bottom: rem-calc(22);
+  font-family: 'Montserrat', sans-serif;
+  font-weight: 600;
+  font-size: rem-calc(42);
+  line-height: rem-calc(54);
+
+  @include breakpoint(medium) {
+    margin-top: rem-calc(36);
+    margin-bottom: rem-calc(36);
+    font-size: rem-calc(56);
+    line-height: rem-calc(68);
+  }
+
+  &.--larger {
+    margin-top: rem-calc(36);
+    margin-bottom: rem-calc(36);
+    font-size: rem-calc(56);
+    line-height: rem-calc(68);
+
+    @include breakpoint(large) {
+      margin-top: rem-calc(50);
+      margin-bottom: rem-calc(50);
+      font-size: rem-calc(80);
+      line-height: rem-calc(98);
+    }
+  }
+
+  &.--normal {
+    font-weight: normal;
+  }
+}
+
+h2 {
+  font-family: 'Montserrat', sans-serif;
+  font-weight: 700;
+  font-size: rem-calc(32);
+  line-height: rem-calc(38);
+
+  @include breakpoint(medium) {
+    font-size: rem-calc(46);
+    line-height: rem-calc(56);
+  }
+}
+
+h3 {
+  font-family: 'Montserrat', sans-serif;
+  font-weight: 600;
+  font-size: rem-calc(24);
+}
+
+p {
+  margin-top: rem-calc(28);
+  margin-bottom: rem-calc(28);
+  font-family: 'Open Sans', sans-serif;
+  font-weight: normal;
+  font-size: rem-calc(16);
+  line-height: 1.5;
+  opacity: 0.8;
+
+  @include breakpoint(medium) {
+    margin-top: rem-calc(32);
+    margin-bottom: rem-calc(32);
+    font-size: rem-calc(18);
+    line-height: 1.7;
+  }
+
+  a {
+    color: $green;
+    @include theme-primary-color;
+
+    &:hover {
+      text-decoration: underline;
+    }
+  }
+}
+
+ul {
+  padding-left: rem-calc(20);
+  
+  li {
+    font-family: 'Open Sans', sans-serif;
+    font-weight: normal;
+    font-size: rem-calc(16);
+    line-height: rem-calc(28);
+
+    @include breakpoint(medium) {
+      font-size: rem-calc(18);
+      line-height: rem-calc(32);
+    }
+  }
+}
+
+i {
+  display: inline-block;
+  position: relative;
+  top: rem-calc(-1);
+  width: rem-calc(24);
+  height: auto;
+  vertical-align: middle;
+
+  img,
+  svg {
+    display: block;
+    width: 100%;
+    height: auto;
+    margin: 0;
+    padding: 0;
+  }
+
+  svg {
+    @include theme-primary-fill;
+  }
+}
+
+hr {
+  border: 0;
+  border-bottom: rem-calc(4) solid $green;
+
+  @include theme-primary-border-color;
+}
+
+.text-center {
+  text-align: center;
+}
+
+.text-right {
+  text-align: right;
+}

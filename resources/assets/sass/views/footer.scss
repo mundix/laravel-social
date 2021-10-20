@@ -1,0 +1,72 @@
+.Footer {
+  padding: rem-calc(40 0 20);
+  border-bottom: rem-calc(14) solid $text-secondary;
+  background-color: $white;
+
+  @include breakpoint(medium) {
+    padding: rem-calc(32 0);
+  }
+
+  &-company {
+    margin-bottom: rem-calc(36);
+    font-family: 'Montserrat', sans-serif;
+    font-weight: 700;
+    font-size: rem-calc(24);
+    line-height: 29px;
+    text-align: center;
+    color: $text-primary;
+
+    @include breakpoint(medium) {
+      text-align: left;
+    }
+  }
+
+  &-nav {
+    display: flex;
+    flex-flow: row nowrap;
+    align-items: center;
+    justify-content: center;
+    margin-bottom: rem-calc(36);
+
+    @include breakpoint(medium) {
+      justify-content: flex-end;
+      margin-bottom: 0;
+    }
+
+    a {
+      display: inline-block;
+      margin: rem-calc(0 18);
+      font-family: 'Montserrat', sans-serif;
+      font-weight: normal;
+      font-size: rem-calc(14);
+      text-transform: uppercase;
+      color: $text-secondary;
+
+      &:last-child {
+        margin-right: rem-calc(18);
+      }
+
+      @include breakpoint(medium) {
+        margin: rem-calc(0 24);
+        font-size: rem-calc(16);
+
+        &:last-child {
+          margin-right: 0;
+        }
+      }
+    }
+  }
+
+  small {
+    display: block;
+    font-family: 'Montserrat', sans-serif;
+    font-weight: normal;
+    font-size: rem-calc(10);
+    text-align: center;
+    color: $text-secondary;
+
+    @include breakpoint(medium) {
+      text-align: left;
+    }
+  }
+}

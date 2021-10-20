@@ -1,0 +1,150 @@
+button.Button {
+    &.disabled {
+        background-color: #ccc !important;
+    }
+}
+
+.errors {
+    margin-top: rem-calc(10);
+
+    &.form-error {
+        color:$red !important;
+        font-size: rem-calc(12) !important;
+    }
+}
+
+// Company Primary and Secondary Colors
+
+.ProfileEdit, .Admin, .Company, .User {
+    input.-color {
+        margin-right: rem-calc(20);
+        border-color: transparent;
+
+        &.primary {
+            &.color1 {
+                background-color: #7B68EE !important;
+            }
+            &.color2 {
+                background-color: #FFA12F !important;
+            }
+            &.color3 {
+                background-color: #FF5722 !important;
+            }
+            &.color4 {
+                background-color: #0998D8 !important;
+            }
+            &.color5 {
+                background-color: #F8306D !important;
+            }
+            &.color6 {
+                background-color: #FF00FC !important;
+            }
+            &.color7 {
+                background-color: #4169E1 !important;
+            }
+            &.color8 {
+                background-color: #5F81FF !important;
+            }
+            &.color9 {
+                background-color: #0998D8 !important;
+            }
+            &.color10 {
+                background-color: #08C7E0 !important;
+            }
+            &.color11 {
+                background-color: $green !important;
+            }
+            &.color12 {
+                background-color: #2EA52C !important;
+            }
+            &.color13 {
+                background-color: #757380 !important;
+            }
+            &.color14 {
+                background-color: #202020 !important;
+            }
+        }
+        &.secondary {
+            &.color1 {
+                background-color: #7B68EE !important;
+            }
+            &.color2 {
+                background-color: #FFA12F !important;
+            }
+            &.color3 {
+                background-color: #FF5722 !important;
+            }
+            &.color4 {
+                background-color: #0998D8 !important;
+            }
+            &.color5 {
+                background-color: #F8306D !important;
+            }
+            &.color6 {
+                background-color: #FF00FC !important;
+            }
+            &.color7 {
+                background-color: #4169E1 !important;
+            }
+            &.color8 {
+                background-color: #5F81FF !important;
+            }
+            &.color9 {
+                background-color: #0998D8 !important;
+            }
+            &.color10 {
+                background-color: #08C7E0 !important;
+            }
+            &.color11 {
+                background-color: $green !important;
+            }
+            &.color12 {
+                background-color: #2EA52C !important;
+            }
+            &.color13 {
+                background-color: #757380 !important;
+            }
+            &.color14 {
+                background-color: #202020 !important;
+            }
+        }
+        @include breakpoint(medium) {
+            margin-right: rem-calc(60);
+        }
+
+        &:last-child {
+            margin-right: 0;
+        }
+    }
+}
+
+/*CSS*/
+// html { scroll-behavior: smooth; }
+
+.UserSignup.step1 .UserSignup-welcome {
+    display: block !important;
+}
+
+.Profile .swiper-container-photos .swiper-slide-image {
+    background-size: cover !important;
+}
+
+textarea {
+    resize: none;
+}
+
+.swal2-title {
+    display: flex !important;
+    flex-flow: column nowrap !important;
+    align-items: flex-start !important;
+    justify-content: flex-start !important;
+
+    p {
+        display: block !important;
+        width: 100% !important;
+        padding: 0 !important;
+        margin: 0 !important;
+        margin-bottom: rem-calc(10) !important;
+        text-align: left !important;
+    }
+}
